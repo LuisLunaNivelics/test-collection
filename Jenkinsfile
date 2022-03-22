@@ -4,10 +4,7 @@ pipeline {
     stage('Performance Testing') {
             steps {
                 echo 'Installing k6'
-                sh 'sudo -n chmod +x setup_k6.sh'
-                sh 'sudo -n ./setup_k6.sh'
-                echo 'Running K6 performance tests...'
-                sh 'k6 run loadtests/performance-test.js'
+                sh 'winget install k6'
             }
         }
     stage('verify k6') {
