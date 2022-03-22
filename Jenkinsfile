@@ -1,10 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('run collection') {
+    stage('verify k6') {
       steps {
-        sh 'docker run -t postman/newman run -h'
-        sh 'docker run -v ${WORKSPACE}:/etc/newman --workdir /etc/newman -t postman/newman run Mycollection.postman_collection.json --color off --disable-unicode'
+        sh 'k6 version'
+      }
+    }
+    stage('run k6 test') {
+      steps {
+        sh 'k6 run k6-script.js'
       }
     }
   }
