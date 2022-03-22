@@ -4,6 +4,7 @@ pipeline {
     stage('Performance Testing') {
             steps {
                 echo 'Installing k6'
+                sh 'sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61'
                 sh 'sudo chmod +x setup_k6.sh'
                 sh 'sudo ./setup_k6.sh'
                 echo 'Running K6 performance tests...'
