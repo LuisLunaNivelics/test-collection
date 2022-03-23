@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'grafana/k6:latest'
+      image 'node:16.13.1-alpine'
     }
   }
   stages {
