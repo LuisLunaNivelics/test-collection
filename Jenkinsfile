@@ -3,6 +3,7 @@ pipeline {
         docker {
             image 'ubuntu:latest'
         }
+  }
   stages {
     stage('Performance Testing') {
             steps {
