@@ -1,17 +1,17 @@
 pipeline {
   agent {
     docker {
-      image 'ubuntu:latest'
+      image 'grafana/k6:latest'
     }
   }
   stages {
     stage('Performance Testing') {
       steps {
         echo 'Installing k6'
-        sh 'sudo -S chmod +x setup_k6.sh'
-        sh 'sudo -S ./setup_k6.sh'
+        //sh 'sudo -S chmod +x setup_k6.sh'
+        //sh 'sudo -S ./setup_k6.sh'
         echo 'Running K6 performance tests...'
-        sh 'k6 run loadtests/performance-test.js'
+        //sh 'k6 run loadtests/performance-test.js'
       }
     }
     stage('verify k6') {
