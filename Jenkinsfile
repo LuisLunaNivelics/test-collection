@@ -1,10 +1,9 @@
 pipeline {
-  try agent {any{image 'grafana/k6:latest'}}
+  try agent {any{image 'node:12.16.2' args '-p 3000:3000'}}
   stages {    
     stage('Test') {      
       steps {
         sh 'node --version'
-        sh 'k6 -v'
       }
     }
   }
