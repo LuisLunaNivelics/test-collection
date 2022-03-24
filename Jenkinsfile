@@ -4,7 +4,7 @@ pipeline {
     stage('Test') {      
       steps {
         sh 'node --version'
-        sh 'docker -v'
+        sh 'newman run MyCollection.postman_collection.json -v'
       }
     }
   }
