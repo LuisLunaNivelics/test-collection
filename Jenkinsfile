@@ -3,7 +3,7 @@ pipeline {
   stages {    
     stage('Test') {      
       steps {
-        bat 'docker -v'
+        sh 'node --version'
       }
     }
   }
