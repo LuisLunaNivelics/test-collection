@@ -1,9 +1,10 @@
 pipeline {
-  try agent {any{image 'node:12.16.2' args '-p 3000:3000'}}
+ agent none
   stages {    
     stage('Test') {      
+      agent { docker 'openjdk:7'}
       steps {
-        sh 'node --version'
+        sh 'java -version'
       }
     }
   }
