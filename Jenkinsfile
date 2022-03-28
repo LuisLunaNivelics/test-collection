@@ -4,7 +4,7 @@ pipeline {
     stage('Test') { 
       steps {
         sh 'node --version'
-        sh 'npm install -g newman'
+        sh 'newman -v'
         sh 'newman run MyCollection.postman_collection.json  -r allure'
       }
     }
