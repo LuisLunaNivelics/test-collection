@@ -1,10 +1,9 @@
 pipeline {
- agent none
+ agent any
   stages {    
-    stage('Test') {      
-      agent { docker {image 'openjdk:7'}}
+    stage('Test') { 
       steps {
-        sh 'java -version'
+        sh 'newman run MyCollection.postman_collection.json  -r allure'
       }
     }
   }
