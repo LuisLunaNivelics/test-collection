@@ -5,7 +5,7 @@ pipeline {
     stages {        
         stage('Performance Testing') {
             steps {
-                echo 'ubuntu --version'
+                sh 'lsb_release -a'
                 echo 'Installing k6'
                 sh 'sudo chmod +x setup_k6.sh'
                 sh 'sudo ./setup_k6.sh'
