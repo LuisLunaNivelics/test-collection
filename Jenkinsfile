@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image 'ubuntu:latest' }
+        docker { image 'grafana/k6:latest' }
     }
     stages {        
         stage('Performance Testing') {
             steps {
-                sh 'lsb_release -a'
+                sh 'k6 version'
                 echo 'Installing k6'
                 sh 'sudo chmod +x setup_k6.sh'
                 sh 'sudo ./setup_k6.sh'
