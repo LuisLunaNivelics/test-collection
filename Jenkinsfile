@@ -2,12 +2,7 @@ pipeline {
     agent {
         docker { image 'ubuntu:latest' }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
+    stages {        
         stage('Performance Testing') {
             steps {
                 echo 'Installing k6'
