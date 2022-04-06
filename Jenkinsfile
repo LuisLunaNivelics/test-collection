@@ -16,7 +16,7 @@ pipeline {
             always
                 {
                     // Generate Allure Report
-                  allure disabled: true, includeProperties: false, jdk: '', results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
+                  allure disabled: false, includeProperties: true, jdk: '', results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
                 }
         }
 }
