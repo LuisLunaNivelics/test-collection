@@ -3,7 +3,7 @@ pipeline {
     stages {        
         stage('Performance Testing') {
             steps {
-                echo 'node --version'
+                sh 'node --version'
                 sh 'npm install -g newman'                
             }
         }
