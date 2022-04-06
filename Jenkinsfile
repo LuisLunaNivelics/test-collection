@@ -8,7 +8,7 @@ pipeline {
             steps {
                 sh 'node --version'    
                 sh 'npm install newman' 
-                sh 'newman -h'          
+                sh 'newman run televisa.postman_collection.json'          
             }
         }
     }
