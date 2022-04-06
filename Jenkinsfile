@@ -1,10 +1,14 @@
 pipeline {
     agent any
+    tools {
+  nodejs 'NodeJs'
+    }
     stages {        
         stage('Performance Testing') {
-            steps nodejs('NodeJs'){
+            steps {
                 sh 'node --version'
-                sh 'npm install newman'                
+                sh 'npm install'      
+                sh 'npm install newman'           
             }
         }
     }
