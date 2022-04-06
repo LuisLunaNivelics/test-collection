@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-  nodejs 'NodeJs'
-    }
+    tools { nodejs 'NodeJs' }
     stages {        
         stage('Performance Testing') {
             steps {
@@ -16,7 +14,7 @@ pipeline {
             always
                 {
                     // Generate Allure Report
-                  allure disabled: false, includeProperties: true, jdk: '', results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
+                  allure disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']], properties: [[key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s']], reportBuildPolicy: 'ALWAYS'
                 }
         }
 }
