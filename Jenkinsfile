@@ -12,4 +12,11 @@ pipeline {
             }
         }
     }
+    post{
+            always
+                {
+                    // Generate Allure Report
+                  allure disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                }
+        }
 }
