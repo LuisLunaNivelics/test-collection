@@ -3,9 +3,7 @@ pipeline {
     tools { nodejs 'NodeJs' }
     stages {        
         stage('Performance Testing') {
-            steps {
-                // Clean before build
-                cleanWs()
+            steps {                
                 sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'newman run televisa.postman_collection.json -r allure'   
@@ -15,6 +13,8 @@ pipeline {
     post{
             always
                 {
+                    // Clean before build
+                    cleanWs()
                     // Generate Allure Report
                   allure disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']]
                 }
