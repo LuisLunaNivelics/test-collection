@@ -14,7 +14,7 @@ pipeline {
             always
                 {
                     // Generate Allure Report
-                  allure disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']], properties: [[key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s']], reportBuildPolicy: 'ALWAYS'
+                  allure --clean disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']], properties: [[key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s']], reportBuildPolicy: 'ALWAYS'
                 }
         }
 }
