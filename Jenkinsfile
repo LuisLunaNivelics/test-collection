@@ -21,6 +21,7 @@ pipeline {
                 sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'lhci --version'
+                sh 'npm i chromium'
                 sh 'lighthouse-ci https://www.nmas.com.mx/'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
