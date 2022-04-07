@@ -20,6 +20,7 @@ pipeline {
             steps {                
                 sh 'node --version'    
                 sh 'npm install newman' 
+                sh 'npm i k6'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
         }
