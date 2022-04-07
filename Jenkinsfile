@@ -21,7 +21,7 @@ pipeline {
                 sh 'node --version'    
                 sh 'npm install newman' 
                 //sh '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-                sh 'brew install k6'
+                sh 'choco install k6'
                 sh 'npm fund'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
