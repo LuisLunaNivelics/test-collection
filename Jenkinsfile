@@ -21,7 +21,7 @@ pipeline {
                 sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'lhci --version'
-                sh 'npm fund'
+                sh 'lhci autorun'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
         }
