@@ -20,8 +20,8 @@ pipeline {
             steps {                
                 sh 'node --version'    
                 sh 'npm install newman' 
-                sh 'npm install @lhci/cli'
-                sh 'lhci --version'
+                sh 'npm install -g @lhci/cli'
+                sh '@lhci --version'
                 sh 'npm fund'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
