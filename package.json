@@ -1,24 +1,26 @@
 {
-  "name": "lighthouse-ci",
+  "name": "test-collection",
   "version": "1.0.0",
   "description": "",
   "main": "lighthouserc-ci.js",
+  "dependencies": {},
+  "devDependencies": {
+    "lighthouse": "^9.5.0"
+  },
   "scripts": {
-    "start": "http-server src",
-    "start:ci": "npm run build && http-server dist"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicobytes/codelab-lighthouse-ci.git"
+    "url": "git+https://github.com/LuisLunaNivelics/test-collection.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nicobytes/codelab-lighthouse-ci/issues"
+    "url": "https://github.com/LuisLunaNivelics/test-collection/issues"
   },
-  "homepage": "https://github.com/nicobytes/codelab-lighthouse-ci#readme",
-  "dependencies": {
-    "http-server": "^0.12.3"
+  "homepage": "https://github.com/LuisLunaNivelics/test-collection#readme"
+}
+ver": "^0.12.3"
   }
 }
