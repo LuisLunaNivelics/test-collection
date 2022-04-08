@@ -18,8 +18,7 @@ pipeline {
             }     
         stage('Performance Testing') {
             steps {                
-                sh 'node --version'  
-                sh 'npm init'  
+                sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'lhci --version'
                 sh 'npm run lighthouse:ci'
