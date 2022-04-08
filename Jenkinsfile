@@ -21,7 +21,7 @@ pipeline {
                 sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'lhci --version'
-                sh 'apk add chromium'
+                sh 'npm i chromium'
                 sh 'lighthouse-ci https://www.nmas.com.mx/ --disable-storage-reset --port 51885 --output-path=./report.json --output json'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
