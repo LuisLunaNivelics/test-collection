@@ -1,24 +1,25 @@
 {
-  "name": "lighthouse-ci",
+  "name": "test-collection",
   "version": "1.0.0",
   "description": "",
-  "main": "lighthouserc-ci.js",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "lighthouse": "^9.5.0"
+  },
   "scripts": {
-    "start": "http-server src",
-    "start:ci": "npm run build && http-server dist"
+    "lighthouse:ci": "node_modules/lighthouse/lighthouse-cli/index.js \
+    --output-path=./lighthouse-report.html --quiet \
+    --chrome-flags='--headless' https://kitconcept.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicobytes/codelab-lighthouse-ci.git"
+    "url": "git+https://github.com/LuisLunaNivelics/test-collection.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nicobytes/codelab-lighthouse-ci/issues"
+    "url": "https://github.com/LuisLunaNivelics/test-collection/issues"
   },
-  "homepage": "https://github.com/nicobytes/codelab-lighthouse-ci#readme",
-  "dependencies": {
-    "http-server": "^0.12.3"
-  }
+  "homepage": "https://github.com/LuisLunaNivelics/test-collection#readme"
 }

@@ -18,11 +18,12 @@ pipeline {
             }     
         stage('Performance Testing') {
             steps {                
-                sh 'node --version'    
+                sh 'node --version'  
+                sh 'npm init'  
                 sh 'npm install newman' 
                 sh 'lhci --version'
                 sh 'npm run lighthouse:ci'
-                sh 'lighthouse-ci https://www.nmas.com.mx/ --disable-storage-reset --port 51885 --output-path=./report.json --output json'
+                //sh 'lighthouse-ci https://www.nmas.com.mx/ --disable-storage-reset --port 51885 --output-path=./report.json --output json'
                 sh 'newman run televisa.postman_collection.json -r allure'   
             }
         }
