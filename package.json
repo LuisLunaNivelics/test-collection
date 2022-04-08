@@ -8,9 +8,7 @@
     "lighthouse": "^9.5.0"
   },
   "scripts": {
-    "lighthouse:ci": "node_modules/lighthouse/lighthouse-cli/index.js \
-    --output-path=./lighthouse-report.html --quiet \
-    --chrome-flags='--headless' https://kitconcept.com"
+    "lighthouse:ci": "node_modules/lighthouse/lighthouse-cli/index.js \""
   },
   "repository": {
     "type": "git",
