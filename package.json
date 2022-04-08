@@ -2,7 +2,7 @@
   "name": "test-collection",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lighthouserc-ci.js",
   "dependencies": {},
   "devDependencies": {
     "lighthouse": "^9.5.0"
