@@ -1,10 +1,18 @@
-pipeline {
-    agent any
-    tools { nodejs 'NodeJs' }
-    stages {   
-        stage('SCM: code update')
+pipeline
+        {
+
+            options
             {
-                steps
+                // keep last 100 builds
+                buildDiscarder(logRotator(numToKeepStr: '100'))
+
+                // add timestamp
+                timestamps()
+            }
+            agent any // run the pipeline on any available node
+             stage('SCM: code update')
+            {
+                    steps
                 {
                     // Clean before build
                     cleanWs()
@@ -15,21 +23,18 @@ pipeline {
                         url: 'https://github.com/LuisLunaNivelics/test-collection'
                     }
                 }
-            }
-        stage('Performance Testing') {
-            steps {        
-                sh ./machine-setup.sh       
-                sh 'node --version'    
-                sh 'lhci --version'
-                sh 'lhci autorun --config=./lighthouserc-ci.js'
-            }
-        }
-    }
-    post{
-            always
-                { 
-                  // Generate Allure Report
-                  allure disabled: false, includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            }     
+                stage('Docker build')
+                {
+                    steps
+                    {
+                        script
+                        {
+                            // copying and building selenium base
+                            docker.build("base-image")
+                        }
+                    }
                 }
+                
+            }
         }
-}
