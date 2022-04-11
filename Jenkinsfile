@@ -10,6 +10,7 @@ pipeline
                 timestamps()
             }
             agent any // run the pipeline on any available node
+            stages{
              stage('SCM: code update')
             {
                     steps
@@ -38,3 +39,4 @@ pipeline
                 
             }
 
+        }
