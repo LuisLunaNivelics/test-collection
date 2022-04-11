@@ -18,7 +18,7 @@ pipeline {
             }
         stage('Performance Testing') {
             steps {        
-                /machine-setup.sh       
+                ./machine-setup.sh       
                 sh 'node --version'    
                 sh 'lhci --version'
                 sh 'lhci autorun --config=./lighthouserc-ci.js'
