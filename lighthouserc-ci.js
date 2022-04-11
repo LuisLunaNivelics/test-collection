@@ -4,7 +4,7 @@ module.exports = {
       startServerCommand: "npm run start",
       numberOfRuns: 3,
       url: ["https://www.nmas.com.mx/"],
-      // chromePath: '/usr/bin/google-chrome',
+      chromePath: "/usr/bin/google-chrome",
     },
     assert: {
       assertions: {
