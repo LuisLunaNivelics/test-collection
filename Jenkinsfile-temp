@@ -17,7 +17,8 @@ pipeline {
                 }
             }     
         stage('Performance Testing') {
-            steps {                
+            steps {              
+                /machine-setup.sh  
                 sh 'node --version'    
                 sh 'npm install newman' 
                 sh 'lhci --version'
