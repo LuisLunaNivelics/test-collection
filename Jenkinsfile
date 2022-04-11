@@ -19,7 +19,7 @@ pipeline
                     script
                     {
                         // checking out repository
-                        git branch: 'main', 
+                        git branch: 'feature/docker', 
                         url: 'https://github.com/LuisLunaNivelics/test-collection'
                     }
                 }
