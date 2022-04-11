@@ -19,7 +19,6 @@ pipeline {
         stage('Performance Testing') {
             steps {             
                 sh 'node --version'    
-                sh 'npm install newman' 
                 sh 'lhci --version'
                 sh 'lhci autorun --config=./lighthouserc-ci.js'
             }
