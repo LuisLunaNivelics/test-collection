@@ -4,7 +4,7 @@ module.exports = {
       startServerCommand: "npm run start",
       numberOfRuns: 3,
       url: ["https://www.nmas.com.mx/"],
-      chromePath: "/usr/bin/google-chrome",
+      //chromePath: "/usr/bin/google-chrome",
     },
     assert: {
       assertions: {
@@ -12,7 +12,7 @@ module.exports = {
         "categories:accessibility": ["error", { minScore: 0.99 }],
         "categories:best-practices": ["error", { minScore: 0.99 }],
         "categories:seo": ["error", { minScore: 0.6 }],
-        'categories.pwa': 'off'
+        "categories.pwa": "off",
       },
     },
     upload: {

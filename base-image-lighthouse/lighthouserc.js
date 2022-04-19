@@ -3,6 +3,7 @@ module.exports = {
     collect: {
       startServerCommand: "npm run start",
       numberOfRuns: 1,
+      settings: { chromeFlags: "--no-headers" },
       url: ["https://www.nmas.com.mx/"],
       //chromePath: "/usr/bin/google-chrome",
     },
